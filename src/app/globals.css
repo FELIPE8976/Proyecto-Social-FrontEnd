@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Coco";
+	src: url("../assets/fonts/Coco-Gothic-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "FSAlbert";
+	src: url("../assets/fonts/FSAlbert-ExtraBold.woff2") format("woff2");
+}
+
+@layer base {
+	:root {
+		--background: hsl(0 0% 100%);
+		--foreground: hsl(222.2 84% 4.9%);
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--primary: 190, 84%, 64%;
+		--primary-foreground: 210 40% 98%;
+
+		--secondary: 63 59% 52%;
+		--secondary-foreground: 190, 84%, 64%;
+
+		--muted: 0 0% 40%;
+		--muted-foreground: 0 0% 0%;
+
+		--accent: 192, 64%, 43%;
+		--accent-foreground: 190, 84%, 64%;
+
+		--destructive: 345 94% 47%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+		--primary-font: "Coco";
+		--secondary-font: "FSAlbert";
+	}
+	body {
+		@apply bg-background text-foreground;
+		font-family: "Coco", sans-serif;
+	}
+}
+
+.primary-font {
+	font-family: var(--primary-font);
+}
+
+.secondary-font {
+	font-family: var(--secondary-font);
+}

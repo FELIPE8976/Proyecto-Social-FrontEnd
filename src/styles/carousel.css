@@ -1,0 +1,72 @@
+.container {
+	margin: 0 auto;
+	width: 400px;
+	height: 250px;
+	position: relative;
+	perspective: 1000px;
+}
+
+.carousel {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.carousel div {
+	transform-style: preserve-3d;
+}
+
+.item {
+	display: block;
+	position: absolute;
+	background: #000000;
+	width: 400px;
+	height: 250px;
+	line-height: 250px;
+	font-size: 5em;
+	text-align: center;
+	color: #fff;
+	opacity: 0.95;
+	border-radius: 10px;
+	z-index: 1;
+	transition: transform 1s;
+}
+
+.a {
+	transform: rotateY(0deg) translateZ(250px);
+}
+.a .item {
+	background: #ed1c24;
+}
+.b {
+	transform: rotateY(60deg) translateZ(250px) rotateY(-60deg);
+}
+.b .item {
+	background: #0072bc;
+}
+.c {
+	transform: rotateY(120deg) translateZ(250px) rotateY(-120deg);
+}
+.c .item {
+	background: #39b54a;
+}
+.d {
+	transform: rotateY(180deg) translateZ(250px) rotateY(-180deg);
+}
+.d .item {
+	background: #f26522;
+}
+.e {
+	transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
+}
+.e .item {
+	background: #630460;
+}
+.f {
+	transform: rotateY(300deg) translateZ(250px) rotateY(-300deg);
+}
+.f .item {
+	background: #8c6239;
+}
