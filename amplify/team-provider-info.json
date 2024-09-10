@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-casacolombia-dev-893ac-authRole",
+      "UnauthRoleArn": "arn:aws:iam::717279717145:role/amplify-casacolombia-dev-893ac-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::717279717145:role/amplify-casacolombia-dev-893ac-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-casacolombia-dev-893ac-deployment",
+      "UnauthRoleName": "amplify-casacolombia-dev-893ac-unauthRole",
+      "StackName": "amplify-casacolombia-dev-893ac",
+      "StackId": "arn:aws:cloudformation:us-west-2:717279717145:stack/amplify-casacolombia-dev-893ac/596b4c30-6a40-11ef-b046-0a6639fd29e9",
+      "AmplifyAppId": "d3nhk6qu5y6u3r"
+    }
+  }
+}
