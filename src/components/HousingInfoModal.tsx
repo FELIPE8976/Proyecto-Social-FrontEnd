@@ -22,12 +22,13 @@ interface HousingInfoModalProps {
 
 interface DepartmentI {
     department_id: string;
-    department_name: string;
+    name: string;
 }
 
 interface CityI {
     city_id: string;
-    city_name: string;
+    department_id: string;
+    name: string;
 }
 
 interface SocioeconomicStatusI {
@@ -61,7 +62,7 @@ const HousingInfoModal: React.FC<HousingInfoModalProps> = ({
 
     useEffect(() => {
         if (data.region) {
-            const selectedDept = departments.find(dept => dept.department_name === data.region);
+            const selectedDept = departments.find(dept => dept.name === data.region);
             if (selectedDept) {
                 setSelectedDepartment(selectedDept.department_id);
             }
@@ -71,7 +72,7 @@ const HousingInfoModal: React.FC<HousingInfoModalProps> = ({
     const handleDepartmentChange = (value: string) => {
         onChange({ target: { name: "region", value } } as React.ChangeEvent<HTMLSelectElement>);
 
-        const selectedDept = departments.find(dept => dept.department_name === value);
+        const selectedDept = departments.find(dept => dept.name === value);
         if (selectedDept) {
             setSelectedDepartment(selectedDept.department_id);
         }
@@ -117,8 +118,8 @@ const HousingInfoModal: React.FC<HousingInfoModalProps> = ({
                             <SelectContent className="focus:border-primary">
                                 <SelectGroup>
                                     {departments.map((department) => (
-                                        <SelectItem key={department.department_id} value={department.department_name}>
-                                            {department.department_name}
+                                        <SelectItem key={department.department_id} value={department.name}>
+                                            {department.name}
                                         </SelectItem>
                                     ))}
                                 </SelectGroup>
@@ -140,8 +141,8 @@ const HousingInfoModal: React.FC<HousingInfoModalProps> = ({
                                         <SelectItem value="" disabled>Cargando ciudades...</SelectItem>
                                     ) : (
                                         Array.isArray(cities) && cities.map((city) => (
-                                            <SelectItem key={city.city_id} value={city.city_name}>
-                                                {city.city_name}
+                                            <SelectItem key={city.city_id} value={city.name}>
+                                                {city.name}
                                             </SelectItem>
                                         ))
                                     )}
