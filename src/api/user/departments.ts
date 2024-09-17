@@ -20,6 +20,7 @@ export function Departments() {
             },
           });
         if (response) {
+          console.log(response);
           setDepartments(response);
         } else {
           console.error("Error al obtener los Departments:", response.status);
