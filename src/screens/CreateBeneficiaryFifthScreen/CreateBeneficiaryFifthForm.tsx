@@ -231,6 +231,27 @@ export function CreateBeneficiaryFifthForm() {
 								</SelectTrigger>
 								<SelectContent className="focus:border-primary">
 									<SelectGroup>
+									<SelectItem value="TI">TI</SelectItem>
+									</SelectGroup>
+								</SelectContent>
+							</Select>
+							{/* <Select
+								value={values.family_members[index].document_type}
+								onValueChange={(value) => {
+									setFieldValue(
+											`family_members[${index}].document_type`,
+											value
+										)
+								}}
+								>
+								<SelectTrigger
+									className="h-16 rounded-lg border-2 focus:border-primary"
+									id="document_type"
+								>
+									<SelectValue placeholder="TI" />
+								</SelectTrigger>
+								<SelectContent className="focus:border-primary">
+									<SelectGroup>
 									{tiposDocumentos.map((tipoDocumento) => (
 										<SelectItem
 										key={tipoDocumento.identification_type_id}
@@ -241,7 +262,7 @@ export function CreateBeneficiaryFifthForm() {
 									))}
 									</SelectGroup>
 								</SelectContent>
-							</Select>
+							</Select> */}
 							
 						</div>
 						<div className="flex w-[80%] flex-col gap-3 rounded-lg">
