@@ -144,16 +144,33 @@ export function CreateBeneficiarySecondForm() {
 								<SelectItem value="PADRE">PADRE</SelectItem>
 								<SelectItem value="HERMANA">HERMANA</SelectItem>
 								<SelectItem value="HERMANO">HERMANO</SelectItem>
-								<SelectItem value="ACUDIENTE">
-									ACUDIENTE
-								</SelectItem>
+								<SelectItem value="ACUDIENTE">ACUDIENTE</SelectItem>
 							</SelectGroup>
 						</SelectContent>
 					</Select>
 				</div>
 				<div className="flex w-[80%] flex-col gap-3 rounded-lg">
 					<Label htmlFor="email">IDENTIFICACIÓN</Label>
-					<Select
+					{
+						<Select
+						value={values.interviewed_person_id_type}
+						onValueChange={(value) => {
+							setFieldValue("interviewed_person_id_type", value);
+						}}
+						>
+						<SelectTrigger
+							className="h-16 rounded-lg border-2 focus:border-primary"
+							id="interviewed_person_id_type"
+						>
+							<SelectValue placeholder="" />
+						</SelectTrigger>
+						<SelectContent className="focus:border-primary">
+							<SelectGroup>
+							<SelectItem value="TI">TI</SelectItem>
+							</SelectGroup>
+						</SelectContent>
+				</Select>
+					/* <Select
 							value={values.interviewed_person_id_type}
 							onValueChange={(value) => {
 								setFieldValue("interviewed_person_id_type", value);
@@ -177,7 +194,7 @@ export function CreateBeneficiarySecondForm() {
 								))}
 								</SelectGroup>
 							</SelectContent>
-					</Select>
+					</Select> */}
 				</div>
 				<div className="flex w-[80%] flex-col gap-3 rounded-lg">
 					<Label htmlFor="email">NÚMERO DE DOCUMENTO</Label>
@@ -249,7 +266,26 @@ export function CreateBeneficiarySecondForm() {
 					</div>
 					<div className="flex flex-1 flex-col gap-3">
 						<Label htmlFor="email">ESTRATO SOCIOECONÓMICO</Label>
-						<Select
+						{
+							<Select
+							value={values.socioeconomic_status_id.socioeconomic_status_value.toString()}
+							onValueChange={(value) => {
+								setFieldValue("socioeconomic_status_id.socioeconomic_status_value", value);
+							}}
+							>
+							<SelectTrigger
+								className="h-16 rounded-lg border-2 focus:border-primary"
+								id="socioeconomic_status_id.socioeconomic_status_value"
+							>
+								<SelectValue placeholder="" />
+							</SelectTrigger>
+							<SelectContent className="focus:border-primary">
+								<SelectGroup>
+								<SelectItem value="1">1</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+						</Select>
+						/* <Select
 							value={values.socioeconomic_status_id.socioeconomic_status_value.toString()}
 							onValueChange={(value) => {
 								setFieldValue("socioeconomic_status_id.socioeconomic_status_value", value);
@@ -273,7 +309,7 @@ export function CreateBeneficiarySecondForm() {
 								))}
 								</SelectGroup>
 							</SelectContent>
-					</Select>
+					</Select> */}
 					</div>
 				</div>
 			</div>
@@ -301,7 +337,25 @@ export function CreateBeneficiarySecondForm() {
 				</div>
 				<div className="flex w-[80%] flex-col gap-3 rounded-lg">
 					<Label htmlFor="email">CIUDAD</Label>
-					<Select
+					{
+						<Select
+							value={values.city}
+							onValueChange={(value) => {
+								setFieldValue("city", value);
+							}}>
+							<SelectTrigger
+								className="h-16 rounded-lg border-2 focus:border-primary"
+								id="city"
+							>
+								<SelectValue placeholder="" />
+							</SelectTrigger>
+							<SelectContent className="focus:border-primary">
+								<SelectGroup>
+								<SelectItem value="Cali">Cali</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+						</Select>
+					/* <Select
 							value={values.city}
 							onValueChange={(value) => {
 								setFieldValue("city", value);
@@ -325,11 +379,30 @@ export function CreateBeneficiarySecondForm() {
 								))}
 								</SelectGroup>
 							</SelectContent>
-					</Select>
+					</Select> */}
 				</div>
 				<div className="flex w-[80%] flex-col gap-3 rounded-lg">
 					<Label htmlFor="email">DEPARTAMENTO</Label>
-					<Select
+					{
+						<Select
+						value={values.department}
+						onValueChange={(value) => {
+							setFieldValue("department", value);
+						}}>
+						<SelectTrigger
+							className="h-16 rounded-lg border-2 focus:border-primary"
+							id="department"
+						>
+							<SelectValue placeholder="" />
+						</SelectTrigger>
+						<SelectContent className="focus:border-primary">
+							<SelectGroup>
+							<SelectItem value="Valle del Cauca">Valle del Cauca</SelectItem>
+							</SelectGroup>
+						</SelectContent>
+					</Select>
+						
+					/* <Select
 							value={values.department}
 							onValueChange={(value) => {
 								setFieldValue("department", value);
@@ -357,7 +430,7 @@ export function CreateBeneficiarySecondForm() {
 								))}
 								</SelectGroup>
 							</SelectContent>
-					</Select>
+					</Select> */}
 				</div>
 			</div>
 			<div className="flex w-[100%] flex-row gap-5">

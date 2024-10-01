@@ -18,7 +18,7 @@ import { useFormikContext } from "formik";
 import { Camera } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import {DocumentTypes} from "@/api/user/documentTypes"
+// import {DocumentTypes} from "@/api/user/documentTypes"
 
 const customEsLocale = {
 	...esLocale,
@@ -47,7 +47,7 @@ export function CreateBeneficiaryFirstForm() {
 
 	const [date, setDate] = useState<Date | undefined>(new Date());
 
-	const tiposDocumentos: DocumentType[] = DocumentTypes();
+	// const tiposDocumentos: DocumentType[] = DocumentTypes();
 
 
 	const fileInput = useRef(null);
@@ -174,7 +174,26 @@ export function CreateBeneficiaryFirstForm() {
 						</div>
 						<div className="flex flex-1 flex-col gap-3">
 							<Label htmlFor="email">IDENTIFICACIÓN</Label>
+							{
 							<Select
+							value={values.identification_type_id.description}
+							onValueChange={(value) => {
+								setFieldValue("identification_type_id.description", value);
+							}}
+							>
+							<SelectTrigger
+								className="h-16 rounded-lg border-2 focus:border-primary"
+								id="identification_type_id"
+							>
+								<SelectValue placeholder="TI" />
+							</SelectTrigger>
+							<SelectContent className="focus:border-primary">
+								<SelectGroup>
+								<SelectItem value="TI">TI</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+							</Select>
+							/* <Select
 							value={values.identification_type_id.description}
 							onValueChange={(value) => {
 								setFieldValue("identification_type_id.description", value);
@@ -198,7 +217,7 @@ export function CreateBeneficiaryFirstForm() {
 								))}
 								</SelectGroup>
 							</SelectContent>
-							</Select>
+							</Select> */}
 						</div>
 						<div className="flex flex-col gap-4">
 							<Label htmlFor="email">FECHA DE NACIMIENTO</Label>
